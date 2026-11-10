@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MELLOW — уют в деталях</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+ <div class="logo">MELLOW.</div>
+ <button class="menu-btn" onclick="toggleMenu()">☰ Меню</button>
+ <nav class="menu" id="menu">
+  <a href="#about" onclick="closeMenu()">О нас</a>
+  <a href="#calculator" onclick="closeMenu()">Калькулятор</a>
+  <a href="#gallery" onclick="closeMenu()">Галерея</a>
+  <a href="#products" onclick="closeMenu()">Товары</a>
+  <a href="#faq" onclick="closeMenu()">Вопросы</a>
+  <a href="#contact" onclick="closeMenu()">Контакты</a>
+ </nav>
+</header>
+<main>
+<section class="hero">
+ <div class="hero-content">
+  <h1>Уют начинается с деталей</h1>
+  <p>MELLOW — магазин вещей, которые делают пространство особенным. Естественные материалы, спокойные оттенки и любовь к маленьким деталям.</p>
+  <a href="#products" class="main-btn">Смотреть коллекцию</a>
+ </div>
+</section>
+<section class="about" id="about">
+ <h2 class="section-title">Немного о нас</h2>
+ <p class="section-text">Создаём атмосферу, в которую хочется возвращаться</p>
+ <div class="about-content">Мы верим, что красота скрывается в простых вещах. Именно поэтому в нашем магазине собраны предметы интерьера, которые сочетают в себе эстетику, практичность и индивидуальность.<br><br>Наша философия — меньше лишнего, больше настоящего. Каждая деталь имеет значение.</div>
+</section>
+<section class="calculator" id="calculator">
+ <h2 class="section-title">Калькулятор покупки</h2>
+ <p class="section-text">Рассчитайте стоимость вашего заказа за пару секунд</p>
+ <div class="calc-box">
+  <label for="quantity">Количество товаров:</label>
+  <input type="number" id="quantity" placeholder="Введите количество" min="1">
+  <label for="price">Цена за единицу (₽):</label>
+  <input type="number" id="price" placeholder="Введите цену" min="0" step="0.01">
+  <button class="main-btn" onclick="calculate()">Рассчитать</button>
+  <div class="result" id="result">Итого: 0 ₽</div>
+ </div>
+</section>
+<section class="about">
+ <h2 class="section-title">Красота в простоте</h2>
+ <p class="section-text">Пространство отражает наше настроение, привычки и характер.<br>Позвольте себе окружить себя тем, что действительно нравится.</p>
+</section>
+<section class="slider-section" id="gallery">
+ <h2 class="section-title">Вдохновение MELLOW</h2>
+ <p class="section-text">Подборка наших любимых интерьерных решений</p>
+ <div class="slider">
+  <img id="slideImage" src="https://i.pinimg.com/1200x/84/71/aa/8471aa100d7390558cc2e63854eb9aa4.jpg" alt="Уютный интерьер">
+  <div class="slide-caption" id="slideCaption" >Уютный интерьер</div>
+  <div class="slider-controls">
+   <button onclick="changeSlide(-1)" aria-label="Предыдущий слайд">←</button>
+   <button onclick="changeSlide(1)" aria-label="Следующий слайд">→</button>
+  </div>
+ </div>
+</section>
+<section class="products" id="products">
+ <h2 class="section-title">Наши коллекции</h2>
+ <p class="section-text">Наведите курсор на карточку, чтобы узнать больше</p>
+ <div class="cards">
+  <div class="flip-card"><div class="flip-inner">
+   <div class="flip-front"><img src="https://i.pinimg.com/736x/a8/6b/e8/a86be8b119f2fae04b1e37a60ae310e1.jpg" alt="Керамическая ваза"></div>
+   <div class="flip-back"><h3>Керамика</h3><p>Вазы и декоративные изделия, созданные для уютных интерьеров.</p></div>
+  </div></div>
+  <div class="flip-card"><div class="flip-inner">
+   <div class="flip-front"><img src="https://i.pinimg.com/1200x/00/74/d9/0074d93e7b26e33c375dd4d263f6c124.jpg" alt="Предметы интерьера"></div>
+   <div class="flip-back"><h3>Декор</h3><p>Небольшие детали, которые создают большую разницу.</p></div>
+  </div></div>
+  <div class="flip-card"><div class="flip-inner">
+   <div class="flip-front"><img src="https://i.pinimg.com/736x/54/8d/08/548d0868e9de05035dd1c792d3f5bfbf.jpg" alt="Домашний текстиль"></div>
+   <div class="flip-back"><h3>Текстиль</h3><p>Мягкие ткани и приятные фактуры для вашего дома.</p></div>
+  </div></div>
+ </div>
+</section>
+<section class="about">
+ <h2 class="section-title">Дом — это настроение</h2>
+ <p class="section-text">Не обязательно менять всё пространство, чтобы почувствовать перемены. Иногда достаточно одной красивой детали, любимой чашки или мягкого пледа.<br><br>Создавайте свой уют в собственном ритме.</p>
+</section>
+<section class="faq" id="faq">
+ <h2 class="section-title">Частые вопросы</h2>
+ <p class="section-text">Всё, что стоит знать перед покупкой</p>
+ <div class="accordion">
+  <div class="accordion-item"><div class="accordion-question">Как оформить заказ?<span>+</span></div><div class="accordion-answer">Выберите понравившиеся товары и свяжитесь с нами через форму обратной связи. Мы поможем оформить заказ.</div></div>
+  <div class="accordion-item"><div class="accordion-question">Сколько занимает доставка?<span>+</span></div><div class="accordion-answer">Срок доставки зависит от вашего региона. Подробную информацию можно уточнить у нашего менеджера.</div></div>
+  <div class="accordion-item"><div class="accordion-question">Можно ли вернуть товар?<span>+</span></div><div class="accordion-answer">Да, возврат возможен в соответствии с действующими правилами возврата и защиты прав потребителей.</div></div>
+  <div class="accordion-item"><div class="accordion-question">Как узнать наличие товара?<span>+</span></div><div class="accordion-answer">Напишите нам через форму обратной связи, указав интересующий товар. Мы проверим его наличие.</div></div>
+ </div>
+</section>
+<section class="contact" id="contact">
+ <h2 class="section-title">Остались вопросы?</h2>
+ <p class="section-text">Оставьте свои контакты, и мы свяжемся с вами</p>
+ <form class="contact-form" onsubmit="sendForm(event)">
+  <input type="text" id="name" placeholder="Ваше имя" required>
+  <input type="email" id="email" placeholder="Ваш Email" required>
+  <button type="submit" class="main-btn">Отправить</button>
+  <p id="formMessage" style="margin-top:20px;"></p>
+ </form>
+</section>
+</main>
+<footer>
+ <div class="logo">MELLOW.</div>
+ <p>Красота в каждой детали.</p>
+ <p>© 2026 MELLOW. Все права защищены.</p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
